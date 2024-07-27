@@ -14,6 +14,7 @@ int main() {
         cin >> arr[i];
         avg += arr[i];
     }
+    cout << "Sum: " << avg << endl;
     avg = avg / n;
     cout << "Average: " << avg << endl;
     return 0;
