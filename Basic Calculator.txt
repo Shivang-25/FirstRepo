@@ -1,0 +1,53 @@
+Math Expression Evaluator
+
+Overview
+This project is a C++ implementation of a mathematical expression evaluator. It supports basic arithmetic operations, factorial calculations, and variable storage. The evaluator processes expressions with operators +, -, *, /, %, ^, !, and allows for the assignment of values to variables using the = operator.
+
+Features
+- Basic Arithmetic Operations: Addition, subtraction, multiplication, and division.
+- Modulus Operation: Computes the remainder of division.
+- Factorial Calculation: Computes the factorial of a non-negative integer.
+- Exponentiation: Raises a number to a power.
+- Variable Support: Store and use variables in expressions.
+
+Usage
+1. Include Header: Make sure to include the math.hpp header file in your project.
+2. Create an Instance: Instantiate the Math class.
+3. Evaluate Expression: Call the operator() method with the expression as a string argument.
+
+Example
+#include "math.hpp"
+#include <iostream>
+
+int main() {
+    Math mathEvaluator;
+    const char* expression = "3 + 4 * (2 - 1)";
+    double result = mathEvaluator(expression);
+
+    if (mathEvaluator.was_error()) {
+        std::cerr << "Error occurred: " << mathEvaluator.error_message() << std::endl;
+    } else {
+        std::cout << "Result: " << result << std::endl;
+    }
+
+    return 0;
+}
+
+Error Handling
+The evaluator can throw errors related to:
+- Broken Balance Brackets: Mismatched parentheses.
+- Unexpected End of Expression: Premature end of expression.
+- Unexpected Operator: Invalid operator used.
+- Overflow: Factorial of a number too large to compute.
+- Unknown Symbol: Unrecognized characters or symbols.
+
+Notes
+- Ensure the expression is syntactically correct.
+- The factorial function only supports non-negative integers.
+- Variables are case-sensitive and are stored between evaluations.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Contact
+For questions or comments, please contact [Your Name] at [Your Email].
